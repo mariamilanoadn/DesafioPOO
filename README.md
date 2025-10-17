@@ -33,7 +33,7 @@ DESCRIÇÃO DE CLASS
 / Uso de `Get` e `Set` para proteger propriedades internas 
 
  **Herança                                                           
- / Classes `Casa` e `Apartamento` herdam de `Imovel` 
+ / Class `Casa` e `Apartamento` herdam de `Imovel` 
  
  **Polimorfismo                                                     
  / Método `EstaAlugado()` implementado de forma diferente em cada classe filha 
