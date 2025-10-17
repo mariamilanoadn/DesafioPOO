@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastrar Imóvel | VivaLar </title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="topo glass">
+    <div class="logo"><i class="fas fa-house-chimney"></i> VivaLar <span>by mari</span></div>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="cadastro.html" class="ativo">Cadastrar</a>
+    </nav>
+    <button id="toggleTheme" class="theme-btn">!</button>
+  </header>
+
+  <section class="formulario-container">
+    <h2><i class="fas fa-plus-circle"></i> Cadastrar Novo Imóvel</h2>
+    <form id="formCadastro" class="formulario">
+      <input type="text" id="proprietario" placeholder="Nome do proprietário" required>
+      <input type="text" id="endereco" placeholder="Endereço" required>
+      <input type="text" id="cidade" placeholder="Cidade" required>
+      <input type="number" id="preco" placeholder="Preço (R$)" required>
+      <select id="tipo">
+        <option value="Casa">Casa</option>
+        <option value="Apartamento">Apartamento</option>
+      </select>
+      <select id="contrato">
+        <option value="venda">Venda</option>
+        <option value="aluguel">Aluguel</option>
+      </select>
+      <input type="url" id="foto" placeholder="URL da imagem do imóvel">
+      <button type="submit" class="cta">Cadastrar</button>
+    </form>
+  </section>
+
+  <footer>© 2025 VivaLar | Desenvolvido por maria Andrade 💙</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

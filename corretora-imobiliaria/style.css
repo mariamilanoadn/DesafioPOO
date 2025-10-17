@@ -1,0 +1,498 @@
+/* ============ RESET ============ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============ VARIÁVEIS DE TEMA ============ */
+:root {
+  --azul: #ff009d;
+  --roxo: #e733ff;
+  --gradiente: linear-gradient(135deg, var(--azul), var(--roxo));
+  --bg: #f5f7fa;
+  --texto: #000000;
+}
+
+/* ============ GLOBAL ============ */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--texto);
+  overflow-x: hidden;
+  transition: background 0.5s, color 0.5s;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* ============ HEADER ============ */
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: var(--gradiente);
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #00ff95;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+nav a:hover, nav a.ativo {
+  color: #00ff95;
+  transform: scale(1.1);
+}
+
+.theme-btn {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  font-size: 1.3rem;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+  background: white;
+  color: var(--azul);
+}
+
+/* ============ HERO ============ */
+.hero {
+  height: 90vh;
+  background-image: url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 80px;
+}
+
+.hero .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  color: white;
+  text-align: center;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+/* ============ BOTÃO CTA ============ */
+.cta {
+  margin-top: 25px;
+  background: #b700ff;
+  color: #000;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.6);
+}
+
+/* ============ CARROSSEL ============ */
+.destaques {
+  text-align: center;
+  margin-top: 60px;
+  padding: 80px 20px;
+}
+
+.destaques h2 {
+  color: var(--azul);
+  margin-bottom: 20px;
+}
+
+.carrossel {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.slide {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.ativo {
+  opacity: 1;
+}
+
+.legenda {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+/* ============ CARDS ============ */
+.cards-container {
+  text-align: center;
+  padding: 80px 20px;
+  background: #fff;
+}
+
+.cards-container h2 {
+  color: var(--roxo);
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  overflow: hidden;
+  transition: transform 0.4s, box-shadow 0.4s;
+  cursor: pointer;
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.info {
+  padding: 15px;
+}
+
+.info h3 {
+  color: var(--azul);
+}
+
+.info p {
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+.card .acoes {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.card button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  transition: 0.3s;
+}
+
+.card button.alugar {
+  background: #0078ff;
+}
+
+.card button.comprar {
+  background: #ff0077;
+}
+
+.card button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ============ STATUS ============ */
+.card .status {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ff0055;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.card.alugado .status {
+  background: #0066ff;
+}
+
+.card.vendido .status {
+  background: #00cc66;
+}
+
+/* ============ FORMULÁRIO DE CADASTRO ============ */
+.formulario-container {
+  padding: 120px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #3a4b64, #25125e);
+  color: white;
+}
+
+.formulario {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.formulario input,
+.formulario select {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.formulario button {
+  margin-top: 10px;
+  background: #ff71f8;
+  color: #000;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.formulario button:hover {
+  background: white;
+  transform: scale(1.05);
+}
+
+/* ============ FOOTER ============ */
+footer {
+  background: var(--gradiente);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  margin-top: 50px;
+}
+
+/* ============ DARK MODE ============ */
+body.dark {
+  --bg: #696969;
+  --texto: #ff8aec;
+  background: var(--bg);
+  color: var(--texto);
+}
+
+body.dark .topo {
+  background: rgba(116, 115, 115, 0.9);
+}
+
+body.dark .cards-container,
+body.dark .formulario-container,
+body.dark .hero {
+  background: #868686;
+  color: #ff9df7;
+}
+
+body.dark .card {
+  background: #acacac;
+}
+
+body.dark footer {
+  background: #f0cff5;
+}
+
+/* ============ RESPONSIVIDADE ============ */
+@media (max-width: 768px) {
+  .topo {
+    flex-direction: column;
+    padding: 15px;
+    gap: 10px;
+  }
+
+  nav a {
+    margin: 0 8px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .formulario {
+    width: 90%;
+  }
+}
+/* FILTROS */
+.filtros {
+  margin: 20px auto 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filtros input, .filtros select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.filtros button {
+  padding: 8px 15px;
+  background: var(--azul);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.filtros button:hover {
+  background: var(--roxo);
+}
+/* ======== DETALHES ======== */
+.detalhes-fundo {
+  min-height: 100vh;
+  background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 20px 60px;
+}
+
+.detalhes-card {
+  max-width: 950px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  overflow: hidden;
+  color: white;
+  animation: aparecer 1s ease;
+}
+
+.detalhes-card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.info-detalhes {
+  padding: 25px 30px;
+}
+
+.info-detalhes h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.local {
+  font-size: 1rem;
+  color: #ffd700;
+  margin-bottom: 15px;
+}
+
+.descricao {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #eee;
+  margin-bottom: 20px;
+}
+
+.preco h2 {
+  color: #ffd700;
+  font-size: 1.8rem;
+}
+
+.btn-acao {
+  margin: 10px;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-acao.comprar { background: #ff0077; }
+.btn-acao.alugar { background: #0078ff; }
+.btn-acao.excluir { background: #444; }
+
+.btn-acao:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+}
