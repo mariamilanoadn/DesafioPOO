@@ -25,10 +25,17 @@ DESCRIÇÃO DE CLASS
 
  Conceito / Onde foi aplicado 
 
-**Abstração                                                          / Classe abstrata `Imovel` define comportamento genérico para tipos de imóvel 
-**Encapsulamento                                                     / Uso de `Get` e `Set` para proteger propriedades internas 
- **Herança                                                           / Classes `Casa` e `Apartamento` herdam de `Imovel` 
- **Polimorfismo                                                      / Método `EstaAlugado()` implementado de forma diferente em cada classe filha 
+**Abstração                                                          
+/ Classe abstrata `Imovel` define comportamento genérico para tipos de imóvel 
+
+**Encapsulamento                                                    
+/ Uso de `Get` e `Set` para proteger propriedades internas 
+
+ **Herança                                                           
+ / Classes `Casa` e `Apartamento` herdam de `Imovel` 
+ 
+ **Polimorfismo                                                     
+ / Método `EstaAlugado()` implementado de forma diferente em cada classe filha 
 
 EXEMPLO DE USO 
 
